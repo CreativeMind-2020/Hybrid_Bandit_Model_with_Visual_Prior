@@ -22,6 +22,7 @@ from __future__ import print_function
 import numpy as np
 
 from HBM.bandit_algorithm import BanditAlgorithm
+np.random.seed(0)
 
 
 class UniformSampling(BanditAlgorithm):

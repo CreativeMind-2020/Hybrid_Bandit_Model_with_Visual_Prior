@@ -24,9 +24,10 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
+import logging
 
 
-def run_contextual_bandit(context_dim, num_actions, dataset,tags, algos):
+def run_contextual_bandit(context_dim, num_actions, dataset,tags, algos, FLAGS):
   """Run a contextual bandit problem on a set of algorithms.
 
   Args:
@@ -51,8 +52,8 @@ def run_contextual_bandit(context_dim, num_actions, dataset,tags, algos):
 
   # Run the contextual bandit process
   for i in range(num_contexts):
-    if i%5000==0:
-      print('-----------------'+str(i)+'----------------')
+    if i%1000==0:
+      logging.info('-----------------'+str(i)+'/'+str(FLAGS.num_contexts)+' samples are done----------------')
     context = cmab.context(i)
     tag = cmab.tag(i)
     actions = [a.action(context, tag) for a in algos]

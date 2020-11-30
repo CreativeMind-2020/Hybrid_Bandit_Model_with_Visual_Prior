@@ -47,6 +47,7 @@ class NeuralBanditModel(BayesianNN):
   def build_layer(self, x, num_units):
     """Builds a layer with input x; dropout and layer norm if specified."""
 
+    tf.set_random_seed(FLAGS.exp_seed)
     init_s = self.hparams.init_scale
 
     layer_n = getattr(self.hparams, "layer_norm", False)
