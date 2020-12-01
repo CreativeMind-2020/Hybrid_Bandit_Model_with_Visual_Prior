@@ -7,7 +7,7 @@ A Hybrid Bandit Model with Visual Priors for Creative Ranking in Display Adverti
 2. Install Tensorflow and requirements as below
     ```
     cd $(HBM_ROOT)
-    pip install -r requirements.txt
+    pip install -r requirements.txt (python2)
     ```
 
 3. To perform experiments, run the script by the following command
